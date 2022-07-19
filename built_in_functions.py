@@ -223,3 +223,106 @@ def play_guess_the_number():
 
 
 play_guess_the_number()
+
+# Task 12
+print("Task 12")
+import random
+import math
+import time
+
+nice_messages = ["Today will be wonderful", "You will find a parking space", "A great week is approaching"]
+
+
+def menu():
+    print("\t\t\t\t Menu")
+    print("""
+        1. Display a nice message
+        2.Calculate area of triangle
+        3.Calculate volume of triangular prism
+        4.Calculates area of a circle
+        5.Display lotto numbers
+        0.To exit
+        """)
+
+
+def message():
+    print(f"{random.choice(nice_messages)}")
+
+
+def triArea(b, h):
+    return (b * h) / 2
+
+
+def triPrismVolume(b, h, l):
+    return (b * h * l) / 2
+
+
+def circArea(rad):
+    print(math.pi * math.pow(rad, 2))
+
+
+def lotto():
+    lotto_numbers = []
+    for number in range(6):
+        number = random.randint(1, 59)
+        lotto_numbers.append(number)
+    print(lotto_numbers)
+
+
+def main():
+    while True:
+        time.sleep(1)
+        menu()
+        answer = int(input("\nPlease choose from the menu: "))
+        if answer == 1:
+            message()
+        elif answer == 2:
+            base = int(input("Enter base: "))
+            height =  int(input("Enter height: "))
+            print(triArea(base, height))
+        elif answer == 3:
+            base = int(input("Enter base: "))
+            height = int(input("Enter height: "))
+            length = int(input("Enter length: "))
+            print(triPrismVolume(base, height, length))
+        elif answer == 4:
+            radius = int(input("Enter radius: "))
+            circArea(radius)
+        elif answer == 5:
+            lotto()
+        elif answer == 0:
+            break
+        else:
+            print("Invalid number")
+
+
+main()
+
+
+# Task 13
+print("Task 13")
+import math
+
+def circArea(rad):
+    return math.pi * math.pow(rad, 2)
+
+def cylinderVolume(rad, h):
+    return rad * h
+
+print(cylinderVolume(circArea(3), 5))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
