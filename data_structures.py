@@ -82,3 +82,46 @@ def run():
 run()
 
 # Tuples
+# task 1
+def likelihood():
+    likelihoods = (50, 38, 27, 99, 4 )
+    return min(likelihoods)
+
+def run():
+    min_val = likelihood()
+    print(f"Minimum likelihood of falling: {min_val}%.")
+
+
+run()
+
+# task 2
+def likelihood():
+    likelihoods = (50, 38, 27, 99, 4 )
+    return min(likelihoods), max(likelihoods)
+
+
+def run():
+    print(f"Minimum likelihood of falling: {likelihood()[0]}%\nMaximum likelihood of falling: {likelihood()[1]}%.")
+
+run()
+
+# task 3
+def steps():
+    return [("step 1", 50) , ("step 2", 38), ("step 3", 27), ("step 4", 99), ("step 5", 4)]
+
+def run():
+    list_of_tuples = steps()
+    bad_steps = []
+    good_steps = []
+    for tup in list_of_tuples:
+        if tup[1] >= 50:
+            bad_steps.append(tup)
+        else:
+            good_steps.append(tup)
+    print(f"Good steps: {len(good_steps)}, Bad steps: {len(bad_steps)}")
+
+run()
+
+
+
+
